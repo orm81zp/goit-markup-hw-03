@@ -1,13 +1,15 @@
 /* normalize */
-html, body, p, ul {
+h1, h2, h3, h4, h5, h6, html, body, p, ul, ol {
   margin: 0;
   padding: 0;
 }
-
 ul {
   list-style-type: none;
 }
-
+img {
+  max-width: 100%;
+  display: block;;
+}
 button {
   cursor: pointer;
 }
@@ -28,12 +30,38 @@ button {
   --modal-background: #FCFCFC;
 }
 
+.container { 
+  max-width: 1158px;
+  padding: 0 15px;  
+  margin: 0 auto; 
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* Body */
 body {
   font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
   color: var(--text);
   letter-spacing: 2%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
 
 /* links */
@@ -55,6 +83,9 @@ a:focus {
   line-height: 1.5;
   background-color: var(--primary-brand);
   color: var(--white-text);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
 }
 
 .button:hover, 
@@ -77,16 +108,22 @@ button.secondary:focus {
 .heading {
   color: var(--dark);
 }
+
 .heading-1 {
   font-size: 56px;
   line-height: 1.08;
   font-weight: 700; /* bold by default */
+  text-align: center;
 }
+
 .heading-2 {
   font-size: 36px;
   line-height: 1.11;
   font-weight: 700; /* bold by default */
+  margin-bottom: 72px;
+  text-align: center;
 }
+
 .heading-3 {
   font-size: 20px;
   line-height: 1.2;
@@ -96,27 +133,134 @@ button.secondary:focus {
 /* Header */
 header {
   background-color: var(--white-background);
+  border-bottom: 1px solid var(--accent);
 }
 
-/* Hero section */
-.section-hero {
-  background-color: var(--dark);
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.section-hero .heading-1 {
-  color: var(--white-text);
+.address-list {
+  display: flex;
+  align-items: center;
 }
 
 /* Navigation */
 .page-nav {
   color: var(--dark);
+  display: flex;
+  align-items: center;
 }
+
+.page-nav .brandlogo-text {
+  margin-right: 76px;
+}
+
+.page-nav-list {
+  display: flex;
+}
+.page-nav-list .list-item {
+  padding: 24px 0;
+}
+
+.page-nav-list .list-item.active .page-nav-link {
+  color: var(--pressed-state);
+}
+
+.page-nav-list .list-item:not(:last-child),
+.address-list .list-item:not(:last-child) {
+  margin-right: 40px;
+}
+
 .page-nav-link {
   font-weight: 500;
 }
+
 .address-list {
   font-style: normal;
 }
+
+/* Sections */
+.section {
+  padding: 120px 0;
+}
+
+.section-advantages {
+  padding-bottom: 0;
+}
+
+.section-portfolio {
+  padding-top: 96px;
+}
+
+.section-hero {
+  background-color: var(--dark);
+  text-align: center;
+  padding: 188px 0;
+}
+
+.section-hero .heading-1 {
+  color: var(--white-text);
+  max-width: 500px;
+  margin: 0 auto 48px auto;
+}
+
+.section-hero button {
+  padding: 16px 32px;
+}
+
+.section-team {
+  background-color: var(--light);
+}
+
+/* Lists */
+.advantages-list,
+.projects-list,
+.team-list,
+.portfolio-list, 
+.portfolio-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.advantages-list > li {
+  flex-basis: 264px;
+}
+
+.team-list > li {
+  text-align:  center;
+  box-shadow: 0 2px 6px rgba(46, 47, 66, 0.32); 
+}
+.portfolio-list {
+  row-gap: 48px;
+}
+
+.portfolio-filter-list {
+  justify-content: center;
+  margin-bottom: 72px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--white-background);
+}
+
+.card .card-body {
+  padding: 32px 16px;
+}
+
+.card .card-body .heading {
+  margin-bottom: 8px;
+}
+
+.portfolio-list .card-body {
+  border: 1px solid var(--accent);
+  border-top: none;
+}
+
 
 /* Brand Logo */
 .brandlogo-text {
@@ -126,7 +270,8 @@ header {
   font-size: 18px;
   line-height: 1.16;
   letter-spacing: 3%;
-  color: var(--primary-brand)
+  color: var(--primary-brand);
+  display: inline-block;
 }
 .brandlogo-text:hover,
 .brandlogo-text:focus  {
@@ -143,4 +288,13 @@ header {
 footer {
   background-color: var(--dark);
   color: var(--white-text);
+  padding: 100px 0;
+}
+
+footer .text {
+  max-width: 264px;
+}
+
+footer .brandlogo-text {
+  margin-bottom: 16px;
 }
