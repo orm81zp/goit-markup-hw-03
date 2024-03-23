@@ -8,7 +8,8 @@ ul {
 }
 img {
   max-width: 100%;
-  display: block;;
+  display: block;
+  object-fit: cover;
 }
 button {
   cursor: pointer;
@@ -84,23 +85,30 @@ a:focus {
   background-color: var(--primary-brand);
   color: var(--white-text);
   padding: 12px 24px;
-  border: none;
+  border: 1px solid var(--primary-brand);
   border-radius: 4px;
+}
+
+.button:hover {
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.12); 
 }
 
 .button:hover, 
 .button:focus {
   background-color: var(--pressed-state);
+  border: 1px solid var(--pressed-state);
 }
 
 button.secondary {
-  background-color: var(--accent);
+  background-color: var(--light);
+  border: 1px solid var(--accent);
   color: var(--primary-brand);
 }
 
 button.secondary:hover,
 button.secondary:focus {
   background-color: var(--pressed-state);
+  border: 1px solid var(--pressed-state);
   color: var(--white-text);
 }
 
@@ -226,13 +234,16 @@ header .container {
   gap: 24px;
 }
 
-.advantages-list > li {
+.advantages-list .card {
   flex-basis: 264px;
+}
+.advantages-list .card .card-body {
+  padding: 0;
 }
 
 .team-list > li {
   text-align:  center;
-  box-shadow: 0 2px 6px rgba(46, 47, 66, 0.32); 
+  box-shadow: 0 2px 6px rgba(46, 47, 66, 0.16); 
 }
 .portfolio-list {
   row-gap: 48px;
