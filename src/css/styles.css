@@ -1,0 +1,146 @@
+/* normalize */
+html, body, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* CSS variables */
+:root {
+  --primary-brand: #4D5AE5;
+  --pressed-state: #404BBF;
+  --dark: #2E2F42;
+  --success: #31D0AA;
+  --text: #434455;
+  --white-text: #FFFFFF;
+  --subtle-text: #8E8F99;
+  --accent: #E7E9FC;
+  --light: #F4F4FD;
+  --modal-overlay: #2E2F42;
+  --white-background: #FFFFFF;
+  --modal-background: #FCFCFC;
+}
+
+/* Body */
+body {
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  letter-spacing: 2%;
+}
+
+/* links */
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+a:hover,
+a:focus {
+  color: var(--pressed-state);
+}
+
+/* Buttons */
+.button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: var(--primary-brand);
+  color: var(--white-text);
+}
+
+.button:hover, 
+.button:focus {
+  background-color: var(--pressed-state);
+}
+
+button.secondary {
+  background-color: var(--accent);
+  color: var(--primary-brand);
+}
+
+button.secondary:hover,
+button.secondary:focus {
+  background-color: var(--pressed-state);
+  color: var(--white-text);
+}
+
+/* headings */
+.heading {
+  color: var(--dark);
+}
+.heading-1 {
+  font-size: 56px;
+  line-height: 1.08;
+  font-weight: 700; /* bold by default */
+}
+.heading-2 {
+  font-size: 36px;
+  line-height: 1.11;
+  font-weight: 700; /* bold by default */
+}
+.heading-3 {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500; /* bold by default */
+}
+
+/* Header */
+header {
+  background-color: var(--white-background);
+}
+
+/* Hero section */
+.section-hero {
+  background-color: var(--dark);
+}
+
+.section-hero .heading-1 {
+  color: var(--white-text);
+}
+
+/* Navigation */
+.page-nav {
+  color: var(--dark);
+}
+.page-nav-link {
+  font-weight: 500;
+}
+.address-list {
+  font-style: normal;
+}
+
+/* Brand Logo */
+.brandlogo-text {
+  font-family: "Raleway";
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1.16;
+  letter-spacing: 3%;
+  color: var(--primary-brand)
+}
+.brandlogo-text:hover,
+.brandlogo-text:focus  {
+  color: var(--primary-brand)
+}
+.brandlogo-text .accent {
+  color: var(--dark);
+}
+.brandlogo-text.light .accent {
+  color: var(--white-text);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark);
+  color: var(--white-text);
+}
