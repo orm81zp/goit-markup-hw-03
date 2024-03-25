@@ -169,8 +169,9 @@ header .container {
 .page-nav-list {
   display: flex;
 }
-.page-nav-list .list-item {
+.page-nav-list .list-item .page-nav-link {
   padding: 24px 0;
+  display: inline-block;
 }
 
 .page-nav-list .list-item.active .page-nav-link {
